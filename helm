@@ -1,0 +1,232 @@
+Helm - package manager
+
+ 
+
+All yamls in to a chart
+
+-name
+
+-description
+
+-version
+
+-template folder that hold all yamls files.
+
+-values- to inject to the template
+
+Machine generated alternative text:
+pre s s / 
+Chart. 
+LICENSE 
+charts/ 
+t«pl.tes/ 
+j son 
+teep1ates/WTES 
+. txt 
+A file the chart 
+A plain containing the for the Chart 
+A Hwan-readable file 
+• The default configuration values for this chart 
+• A Sch.—a for i"'osing a Structure the values.ya•l file 
+A directory containing any charts upon which this chart depends. 
+A directory of teelates that, cc—bined with values, 
+generate valid 
+A plain text file containing short usage notes
+ 
+
+Helm install --set param=value  
+
+Helm install --values app-1.yaml
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Installation:
+
+ 
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
+chmod 700 get_helm.sh
+
+./get_helm.sh
+
+ 
+
+ 
+
+helm repo add stable https://charts.helm.sh/stable
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo add minio https://charts.min.io/
+
+ 
+
+ 
+
+ 
+
+https://www.fosstechnix.com/install-prometheus-and-grafana-on-kubernetes-using-helm/
+
+helm install stable prometheus-community/kube-prometheus-stack
+
+helm install --namespace minio --set rootUser=rootuser,rootPassword=rootpass123 --generate-name minio/minio
+
+ 
+
+ 
+
+ 
+
+Download and edit Helm charts:
+
+---------------------------------------------
+
+Helm show values <cart-name> > values.yaml
+
+ 
+
+Helm show values  prometheus-community/kube-prometheus-stack  > values.yaml
+
+ 
+
+Edit values.yaml..
+
+ 
+
+Helm install <deploy-name> <chart name> -f values.yaml
+
+ 
+
+ 
+
+Helm ls
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+helm install --namespace minio --set rootUser=root,rootPassword=123456 --generate-name minio/minio
+
+ 
+
+helm install --set mode=distributed,replicas=4 minio/minio
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+maxSurge: 1 
+maxUnavai1ab1e 
+Value injections for our Chart 
+For Cl systems. we may want to inject an image tag as a build number 
+template 
+metadata: 
+labels: 
+app: 
+spec: 
+name: 
+example- app 
+example-app 
+image: aimvector/python:1.e.4 
+imagePu11P01icy 
+containerPort 
+# livenessProbe: 
+# httpGet: 
+Always 
+5øee 
+Basic parameter injection: 
+# values. yaml 
+Image: "a 
+# deployment. yam1 
+image: -Values. deoloyment.image }}:{{ 
+. Values. deployment. tag }}
+ 
+
+ 
+
+ 
+
+ 
+
+Helm show values prometheus-community/prometheus-mongodb-exporter
+
+ 
+
+helm show values kafka-ui/kafka-ui
+
+helm tempalte kafka-ui/kafka-ui
+
+ 
+
+ 
+
+ 
+
+helm template bitnami/kafka
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+        # echo "# deploy Zookeeper Helm Chert"
+
+        # #helm repo add bitnami https://charts.bitnami.com/bitnami  # TODO: download chelm chart and docker image to local repository and update Helm accordigly      
+
+        # helm install zookeeper ./kubernetes/zookeeper \
+
+        # --set replicaCount=1 \
+
+        # --set auth.enabled=false \
+
+        # --set allowAnonymousLogin=true \
+
+        # --set image.registry=${REGISTRY_PATH} \
+
+        # --set image.repository=zookeeper \
+
+        # --set image.tag=latest | exit 1
+
+ 
